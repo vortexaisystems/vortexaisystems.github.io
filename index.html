@@ -5,96 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex AI Systems</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #0b0e14; color: #fff; }
-        .hero { padding: 60px 20px; text-align: center; }
-        
-        /* Efecto 3D Metálico para el título VORTEX AI SYSTEMS */
-        .title-3d {
-            font-size: 3.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 
-                0 1px 0 #cccccc, 
-                0 2px 0 #b2b2b2, 
-                0 3px 0 #999999, 
-                0 4px 0 #7f7f7f, 
-                0 5px 0 #666666, 
-                0 6px 1px rgba(0,0,0,0.3), 
-                0 0 5px rgba(0,0,0,0.3), 
-                0 1px 3px rgba(0,0,0,0.5), 
-                0 3px 5px rgba(0,0,0,0.4), 
-                0 5px 10px rgba(0,0,0,0.4), 
-                0 10px 10px rgba(0,0,0,0.3), 
-                0 20px 20px rgba(0,0,0,0.25);
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+        body { font-family: sans-serif; margin: 0; background-color: #0b0e14; color: #fff; }
+        /* Fondo con degradado sutil para el título */
+        .hero { 
+            padding: 100px 20px; 
+            background: linear-gradient(180deg, #1a1d23 0%, #0b0e14 100%); 
+            text-align: center; 
         }
-
-        .subtitle { color: #8892b0; font-size: 1.2rem; margin-bottom: 30px; }
+        .title-3d { 
+            font-size: 4rem; font-weight: 900; text-transform: uppercase; 
+            color: #fff;
+            text-shadow: 2px 2px 0px #444, 4px 4px 0px #222, 6px 6px 0px #000;
+            margin-bottom: 20px;
+        }
+        .corporate-section { padding: 50px 20px; background-color: #11141b; text-align: center; }
+        .image-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
+        .image-card { width: 400px; border: 1px solid #333; padding: 15px; background: #1a1d23; border-radius: 8px; }
+        .image-card img { width: 100%; border-radius: 4px; }
         
-        /* Estilos generales de sección corporativa */
-        .corporate-section { padding: 60px 20px; background-color: #111827; text-align: center; border-top: 1px solid #333; }
-        .corporate-title { color: #64ffda; font-size: 2.2rem; margin-bottom: 30px; }
-        .image-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1100px; margin: 0 auto; }
-        .image-card { background: #1a2234; border-radius: 8px; overflow: hidden; width: 45%; min-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left; }
-        .image-card img { width: 100%; display: block; }
-        .card-body { padding: 20px; }
-        .card-title { color: #64ffda; margin: 0 0 10px 0; font-size: 1.3rem; }
-        .card-text { color: #8892b0; margin: 0; }
-        
-        /* Contenedor principal y utilitarios */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .hidden { display: none !important; }
-        .flex { display: flex !important; }
+        /* Estilos de botones de servicios */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 50px 20px; }
+        .btn-service { background: #f39c12; color: #000; padding: 15px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; }
     </style>
 </head>
 <body>
+    <div class="hero">
+        <h1 class="title-3d">VORTEX AI SYSTEMS</h1>
+        <p>Automatización e IA para empresas de alto rendimiento.</p>
+    </div>
 
-    <header style="background-color: #111827; padding: 15px 0; border-bottom: 1px solid #222;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="font-weight: bold; color: #f39c12; font-size: 1.2rem;">VORTEX AI</div>
-            <div style="color: #8892b0; font-size: 0.9rem;">Sede: Argentina | Global Operations</div>
-        </div>
-    </header>
+    <!-- SECCIÓN DE SERVICIOS (Tus botones) -->
+    <div class="services-grid">
+        <button class="btn-service">BOT WHATSAPP 24/7</button>
+        <button class="btn-service">CRM AUTOMATIZADO</button>
+        <button class="btn-service">PIPELINE DE VENTAS</button>
+    </div>
 
-    <main>
-        <div class="hero">
-            <!-- Título Principal con Efecto 3D -->
-            <h1 class="title-3d">VORTEX AI SYSTEMS</h1>
-            <p class="subtitle">Construimos sistemas de IA que responden, venden, facturan y reportan solos.</p>
-        </div>
-
-        <!-- SECCIÓN DE FOTOS CORPORATIVAS Y DIRECCIÓN -->
-        <section class="corporate-section">
-            <h2 class="corporate-title">Nuestra Estructura Corporativa</h2>
-            <div class="image-grid">
-                
-                <!-- Tarjeta Recepción -->
-                <div class="image-card">
-                    <img src="recepcion.jpg" alt="Recepción Corporativa">
-                    <div class="card-body">
-                        <h3 class="card-title">Oficinas Centrales</h3>
-                        <p class="card-text">Dirección Ejecutiva: Eduardo Miguel Mera</p>
-                    </div>
-                </div>
-
-                <!-- Tarjeta Sala de Reuniones -->
-                <div class="image-card">
-                    <img src="oficina.jpg" alt="Sala de Reuniones">
-                    <div class="card-body">
-                        <h3 class="card-title">Centro de Innovación</h3>
-                        <p class="card-text">Desarrollo tecnológico y estrategia global.</p>
-                    </div>
-                </div>
-
+    <!-- SECCIÓN CORPORATIVA (Tus fotos) -->
+    <section class="corporate-section">
+        <h2>Estructura Corporativa</h2>
+        <div class="image-grid">
+            <div class="image-card">
+                <img src="recepcion.jpg" alt="Recepción">
+                <p><strong>Dirección:</strong> Eduardo Miguel Mera</p>
             </div>
-        </section>
-    </main>
-
-    <footer style="text-align: center; padding: 30px; background-color: #07090c; color: #555; font-size: 0.85rem;">
-        &copy; 2026 VORTEX AI SYSTEMS. All rights reserved. Argentina · España · USA.
-    </footer>
-
+            <div class="image-card">
+                <img src="oficina.jpg" alt="Sala de Reuniones">
+                <p><strong>Centro de Innovación Tecnológica</strong></p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
