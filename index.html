@@ -1,449 +1,100 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex AI Systems | Autonomous Global Operations</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        vortex: {
-                            950: '#020617',
-                            900: '#090d16',
-                            800: '#111827',
-                            gold: '#fbbf24'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Vortex AI Systems</title>
     <style>
-        .glass-card {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(9, 13, 22, 0.95) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-card:hover {
-            border-color: rgba(251, 191, 36, 0.7);
-            box-shadow: 0 0 35px rgba(251, 191, 36, 0.3);
-            transform: translateY(-5px);
-        }
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #fef08a 0%, #fbbf24 50%, #d97706 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* 3D Rotating Logo Cube - Full Perspective */
-        .logo-3d-container { 
-            perspective: 800px; 
-            width: 50px;
-            height: 50px;
-        }
-        .logo-3d-cube {
-            width: 50px;
-            height: 50px;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotate3d 6s infinite linear;
-        }
-        @keyframes rotate3d {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
-        }
-        .cube-face {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: rgba(15, 23, 42, 0.95);
-            border: 2px solid #fbbf24;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #0b0e14; color: #fff; }
+        .hero { padding: 60px 20px; text-align: center; }
+        
+        /* Efecto 3D Metálico para el título VORTEX AI SYSTEMS */
+        .title-3d {
+            font-size: 3.5rem;
             font-weight: 900;
-            color: #fbbf24;
-            font-size: 16px;
-            box-shadow: inset 0 0 15px rgba(251, 191, 36, 0.5);
-        }
-        .cube-front  { transform: translateZ(25px); }
-        .cube-back   { transform: rotateY(180deg) translateZ(25px); }
-        .cube-right  { transform: rotateY(90deg) translateZ(25px); }
-        .cube-left   { transform: rotateY(-90deg) translateZ(25px); }
-        .cube-top    { transform: rotateX(90deg) translateZ(25px); }
-        .cube-bottom { transform: rotateX(-90deg) translateZ(25px); }
-
-        /* True 3D Hero Title with Depth */
-        .hero-3d-title {
-            font-size: clamp(3rem, 8vw, 7rem);
-            font-weight: 900;
-            line-height: 1.05;
             text-transform: uppercase;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff 10%, #fbbf24 50%, #d97706 90%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 15px 25px rgba(251, 191, 36, 0.4));
-            transform: perspective(1000px) rotateX(12deg);
+            color: #ffffff;
+            text-shadow: 
+                0 1px 0 #cccccc, 
+                0 2px 0 #b2b2b2, 
+                0 3px 0 #999999, 
+                0 4px 0 #7f7f7f, 
+                0 5px 0 #666666, 
+                0 6px 1px rgba(0,0,0,0.3), 
+                0 0 5px rgba(0,0,0,0.3), 
+                0 1px 3px rgba(0,0,0,0.5), 
+                0 3px 5px rgba(0,0,0,0.4), 
+                0 5px 10px rgba(0,0,0,0.4), 
+                0 10px 10px rgba(0,0,0,0.3), 
+                0 20px 20px rgba(0,0,0,0.25);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
         }
+
+        .subtitle { color: #8892b0; font-size: 1.2rem; margin-bottom: 30px; }
+        
+        /* Estilos generales de sección corporativa */
+        .corporate-section { padding: 60px 20px; background-color: #111827; text-align: center; border-top: 1px solid #333; }
+        .corporate-title { color: #64ffda; font-size: 2.2rem; margin-bottom: 30px; }
+        .image-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1100px; margin: 0 auto; }
+        .image-card { background: #1a2234; border-radius: 8px; overflow: hidden; width: 45%; min-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left; }
+        .image-card img { width: 100%; display: block; }
+        .card-body { padding: 20px; }
+        .card-title { color: #64ffda; margin: 0 0 10px 0; font-size: 1.3rem; }
+        .card-text { color: #8892b0; margin: 0; }
+        
+        /* Contenedor principal y utilitarios */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .hidden { display: none !important; }
+        .flex { display: flex !important; }
     </style>
 </head>
-<body class="bg-vortex-950 text-gray-100 font-sans antialiased selection:bg-vortex-gold selection:text-black">
+<body>
 
-    <!-- Top Utility Bar -->
-    <div class="bg-vortex-900 border-b border-gray-800 text-xs font-mono py-2.5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex flex-wrap items-center gap-6 text-gray-400">
-                <span>⚡ WHATSAPP: <strong class="text-white">+54 9 11 2242-8253</strong></span>
-                <span>✉️ AUDIT: <strong class="text-white">auditoria.vortexaisystems@gmail.com</strong></span>
-                <span>✉️ DIR: <strong class="text-white">director.vortexaisystems.com</strong></span>
-            </div>
-            <div class="text-vortex-gold flex items-center space-x-2">
-                <span class="w-2 h-2 rounded-full bg-vortex-gold animate-pulse"></span>
-                <span>WWW.VORTEXAISYSTEMS.COM // ACTIVE</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-vortex-950/90 backdrop-blur-xl border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="logo-3d-container">
-                    <div class="logo-3d-cube">
-                        <div class="cube-face cube-front">V</div>
-                        <div class="cube-face cube-back">AI</div>
-                        <div class="cube-face cube-right">SYS</div>
-                        <div class="cube-face cube-left">V</div>
-                        <div class="cube-face cube-top">⚡</div>
-                        <div class="cube-face cube-bottom">AI</div>
-                    </div>
-                </div>
-                <span class="text-xl font-extrabold tracking-wider text-white">VORTEX <span class="text-gold-gradient">AI SYSTEMS</span></span>
-            </div>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
-                <a href="#servicios" class="hover:text-vortex-gold transition-colors" data-es="Servicios" data-en="Services">Servicios</a>
-                <a href="#proceso" class="hover:text-vortex-gold transition-colors" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
-                <a href="#nosotros" class="hover:text-vortex-gold transition-colors" data-es="Nosotros" data-en="About Us">Nosotros</a>
-            </nav>
-
-            <div class="flex items-center space-x-4">
-                <button onclick="toggleLang()" class="px-3.5 py-1.5 rounded-lg border border-gray-700 bg-vortex-900 text-xs font-mono font-bold text-vortex-gold hover:border-vortex-gold transition-all">
-                    🌐 <span id="lang-indicator">ES</span> / EN
-                </button>
-                <a href="#contacto" class="hidden sm:inline-flex px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 text-black font-extrabold text-sm hover:scale-105 transition-transform shadow-lg shadow-amber-500/20" data-es="CONTACTAR" data-en="CONTACT">
-                    CONTACTAR
-                </a>
-            </div>
+    <header style="background-color: #111827; padding: 15px 0; border-bottom: 1px solid #222;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-weight: bold; color: #f39c12; font-size: 1.2rem;">VORTEX AI</div>
+            <div style="color: #8892b0; font-size: 0.9rem;">Sede: Argentina | Global Operations</div>
         </div>
     </header>
 
-    <!-- Hero Section con Título 3D Real -->
-    <section class="relative pt-28 pb-24 md:pt-40 md:pb-36 overflow-hidden border-b border-gray-800 bg-gradient-to-b from-vortex-950 via-vortex-900 to-vortex-950 text-center">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-vortex-gold/30 bg-vortex-gold/10 text-vortex-gold text-xs font-mono mb-8">
-                <span>✦ AUTOMATIZACIÓN & IA PARA EMPRESAS · AR · ES · USA</span>
-            </div>
-
-            <!-- Título 3D Real -->
-            <div class="mb-10">
-                <h1 class="hero-3d-title">
-                    VORTEX <br>AI SYSTEMS
-                </h1>
-            </div>
-
-            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed mb-12" data-es="Construimos sistemas de IA que responden, venden, facturan y reportan — solos, a cualquier hora, sin que vos hagas nada." data-en="We build AI systems that respond, sell, bill and report — automatically, anytime, without you doing anything.">
-                Construimos sistemas de IA que <strong class="text-white">responden, venden, facturan y reportan</strong> — solos, a cualquier hora, sin que vos hagas nada.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contacto" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-400 text-black font-bold text-base hover:bg-amber-300 transition-all shadow-xl shadow-amber-400/20 text-center" data-es="Quiero esto para mi empresa →" data-en="I want this for my company →">
-                    Quiero esto para mi empresa →
-                </a>
-                <a href="#servicios" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-gray-700 bg-vortex-900 text-white font-semibold text-base hover:bg-gray-800 transition-colors text-center" data-es="Ver cómo funciona" data-en="See how it works">
-                    Ver cómo funciona
-                </a>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mt-20 pt-10 border-t border-gray-800 text-center">
-                <div>
-                    <div class="text-3xl font-black text-white font-mono mb-1">10+</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider" data-es="Servicios activos" data-en="Active services">Servicios activos</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-gold-gradient font-mono mb-1">48h</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider" data-es="Primer resultado" data-en="First result">Primer resultado</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-white font-mono mb-1">24/7</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider" data-es="Tu negocio activo" data-en="Business active">Tu negocio activo</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-gold-gradient font-mono mb-1">3x</div>
-                    <div class="text-xs text-gray-400 uppercase tracking-wider" data-es="Países: AR · ES · USA" data-en="Countries: AR · ES · USA">Países: AR · ES · USA</div>
-                </div>
-            </div>
+    <main>
+        <div class="hero">
+            <!-- Título Principal con Efecto 3D -->
+            <h1 class="title-3d">VORTEX AI SYSTEMS</h1>
+            <p class="subtitle">Construimos sistemas de IA que responden, venden, facturan y reportan solos.</p>
         </div>
-    </section>
 
-    <!-- Servicios Grid Interactivo -->
-    <section id="servicios" class="py-24 bg-vortex-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-vortex-gold mb-2" data-es="Servicios" data-en="Services">Servicios</h2>
-                <h3 class="text-3xl sm:text-5xl font-black text-white" data-es="Lo que hacemos por tu empresa" data-en="What we do for your company">Lo que hacemos por tu empresa</h3>
-                <p class="text-gray-400 mt-2" data-es="Sistemas inteligentes que trabajan mientras vos crecés." data-en="Intelligent systems working while you grow.">Sistemas inteligentes que trabajan mientras vos crecés.</p>
+        <!-- SECCIÓN DE FOTOS CORPORATIVAS Y DIRECCIÓN -->
+        <section class="corporate-section">
+            <h2 class="corporate-title">Nuestra Estructura Corporativa</h2>
+            <div class="image-grid">
+                
+                <!-- Tarjeta Recepción -->
+                <div class="image-card">
+                    <img src="recepcion.jpg" alt="Recepción Corporativa">
+                    <div class="card-body">
+                        <h3 class="card-title">Oficinas Centrales</h3>
+                        <p class="card-text">Dirección Ejecutiva: Eduardo Miguel Mera</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Sala de Reuniones -->
+                <div class="image-card">
+                    <img src="oficina.jpg" alt="Sala de Reuniones">
+                    <div class="card-body">
+                        <h3 class="card-title">Centro de Innovación</h3>
+                        <p class="card-text">Desarrollo tecnológico y estrategia global.</p>
+                    </div>
+                </div>
+
             </div>
+        </section>
+    </main>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-vortex-gold font-mono text-xs mb-3">01 // AUTOMACIÓN DE CHAT</div>
-                        <h4 class="text-xl font-bold text-white mb-2" data-es="Bot WhatsApp 24/7" data-en="24/7 WhatsApp Bot">Bot WhatsApp 24/7</h4>
-                        <p class="text-gray-400 text-sm mb-6" data-es="Responde, califica y agenda automáticamente. Tu negocio nunca duerme." data-en="Responds, qualifies and schedules automatically. Your business never sleeps.">Responde, califica y agenda automáticamente. Tu negocio nunca duerme.</p>
-                    </div>
-                    <button onclick="openModal('Bot WhatsApp 24/7', 'Integración directa de GPT-4 con la API Oficial de WhatsApp. Califica clientes potenciales mediante preguntas estratégicas, presupuesto y nivel de interés, cerrando reuniones en tu agenda sin intervención humana.', 'Stack: Make.com + OpenAI + WhatsApp Cloud API')" class="text-xs font-mono text-vortex-gold hover:underline text-left">
-                        <span data-es="Leer más →" data-en="Read more →">Leer más →</span>
-                    </button>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-vortex-gold font-mono text-xs mb-3">02 // BASE DE DATOS</div>
-                        <h4 class="text-xl font-bold text-white mb-2" data-es="CRM Automatizado" data-en="Automated CRM">CRM Automatizado</h4>
-                        <p class="text-gray-400 text-sm mb-6" data-es="Capturá, clasificá y seguí leads automáticamente desde todos tus canales." data-en="Capture, classify and track leads automatically from all your channels.">Capturá, clasificá y seguí leads automáticamente desde todos tus canales.</p>
-                    </div>
-                    <button onclick="openModal('CRM Automatizado', 'Sincronización en tiempo real entre tus formularios web, anuncios y tu CRM. Cero carga manual de datos y actualización instantánea de estados.', 'Stack: Webhooks + Make + CRM Connectors')" class="text-xs font-mono text-vortex-gold hover:underline text-left">
-                        <span data-es="Leer más →" data-en="Read more →">Leer más →</span>
-                    </button>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-vortex-gold font-mono text-xs mb-3">03 // PIPELINE DE VENTAS</div>
-                        <h4 class="text-xl font-bold text-white mb-2" data-es="Automatización de Ventas" data-en="Sales Automation">Automatización de Ventas</h4>
-                        <p class="text-gray-400 text-sm mb-6" data-es="Pipeline completo desde el primer contacto hasta el cierre. Más ventas, menos trabajo." data-en="Complete pipeline from first contact to close. More sales, less work.">Pipeline completo desde el primer contacto hasta el cierre. Más ventas, menos trabajo.</p>
-                    </div>
-                    <button onclick="openModal('Automatización de Ventas', 'Secuencias multicanal automáticas que recontactan prospectos, envían propuestas personalizadas y notifican cuando un cliente está listo para comprar.', 'Stack: GPT-4 + Email API + Make')" class="text-xs font-mono text-vortex-gold hover:underline text-left">
-                        <span data-es="Leer más →" data-en="Read more →">Leer más →</span>
-                    </button>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-vortex-gold font-mono text-xs mb-3">04 // CALENDAR & AGENDA</div>
-                        <h4 class="text-xl font-bold text-white mb-2" data-es="Agendamiento Inteligente" data-en="Smart Scheduling">Agendamiento Inteligente</h4>
-                        <p class="text-gray-400 text-sm mb-6" data-es="Reservas, citas y recordatorios automáticos. Cero no-shows, cero llamadas perdidas." data-en="Automatic reservations, appointments and reminders. Zero no-shows, zero missed calls.">Reservas, citas y recordatorios automáticos. Cero no-shows, cero llamadas perdidas.</p>
-                    </div>
-                    <button onclick="openModal('Agendamiento Inteligente', 'Sistema de turnos sincronizado con Google Calendar. Envía confirmación instantánea por WhatsApp y recordatorios automáticos.', 'Stack: Google Calendar API + WhatsApp API')" class="text-xs font-mono text-vortex-gold hover:underline text-left">
-                        <span data-es="Leer más →" data-en="Read more →">Leer más →</span>
-                    </button>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-vortex-gold font-mono text-xs mb-3">05 // FINANZAS & PAGOS</div>
-                        <h4 class="text-xl font-bold text-white mb-2" data-es="Facturación Automática" data-en="Automatic Billing">Facturación Automática</h4>
-                        <p class="text-gray-400 text-sm mb-6" data-es="Facturas, cobros y recordatorios de pago sin intervención humana. Menos morosidad." data-en="Invoices, collections and payment reminders without human intervention. Less delinquency.">Facturas, cobros y recordatorios de pago sin intervención humana. Menos morosidad.</p>
-                    </div>
-                    <button onclick="openModal('Facturación Automática', 'Generación autónoma de contratos e integración con Stripe. Al procesarse un pago, se emite la factura y se inicia el servicio automáticamente.', 'Stack: Stripe API + Python + Billing Automation')" class="text-xs font-mono text-vortex-gold hover:underline text-left">
-                        <span data-es="Leer más →" data-en="Read more →">Leer más →</span>
-                    </button>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="text-vortex-gold font-mono text-xs mb-3">06 // DASHBOARD KPI</div>
-                        <h4 class="text-xl font-bold text-white mb-2" data-es="Tablero de Métricas" data-en="Metrics Dashboard">Tablero de Métricas</h4>
-                        <p class="text-gray-400 text-sm mb-6" data-es="Ventas, leads y conversiones en tiempo real. Tomá decisiones con datos, no con intuición." data-en="Real-time sales, leads and conversions. Make decisions with data, not intuition.">Ventas, leads y conversiones en tiempo real. Tomá decisiones con datos, no con intuición.</p>
-                    </div>
-                    <button onclick="openModal('Tablero de Métricas', 'Panel interactivo central con métricas en vivo sobre conversión de leads, tiempo de respuesta e ingresos generados por canal.', 'Stack: Analytics Core + Custom Dashboard')" class="text-xs font-mono text-vortex-gold hover:underline text-left">
-                        <span data-es="Leer más →" data-en="Read more →">Leer más →</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal Emergente -->
-    <div id="serviceModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden items-center justify-center p-4">
-        <div class="glass-card p-8 rounded-3xl max-w-xl w-full border border-amber-500/50 relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white font-mono text-lg">✕</button>
-            <h3 id="modalTitle" class="text-2xl font-black text-white mb-4"></h3>
-            <p id="modalDescription" class="text-gray-300 text-sm leading-relaxed mb-6"></p>
-            <div class="p-3 rounded-xl bg-vortex-950 border border-gray-800 font-mono text-xs text-vortex-gold mb-6" id="modalStack"></div>
-            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-amber-400 text-black font-bold text-sm hover:bg-amber-300 transition-all">Entendido</button>
-        </div>
-    </div>
-
-    <!-- Proceso -->
-    <section id="proceso" class="py-24 bg-vortex-900 border-y border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-xs font-mono uppercase tracking-widest text-vortex-gold mb-2" data-es="Proceso" data-en="Process">Proceso</h2>
-            <h3 class="text-3xl sm:text-5xl font-black text-white mb-4" data-es="Cómo trabajamos con vos" data-en="How we work with you">Cómo trabajamos con vos</h3>
-            <p class="text-gray-400 mb-16" data-es="Simple, preciso, sin tecnicismos." data-en="Simple, precise, no technical jargon.">Simple, preciso, sin tecnicismos.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-3xl font-black text-vortex-gold font-mono mb-3">01</div>
-                    <h4 class="text-lg font-bold text-white mb-2" data-es="Auditoría gratuita" data-en="Free audit">Auditoría gratuita</h4>
-                    <p class="text-gray-400 text-sm" data-es="Analizamos tu negocio e identificamos exactamente dónde estás perdiendo tiempo y dinero." data-en="We analyze your business and identify exactly where you are losing time and money.">Analizamos tu negocio e identificamos exactamente dónde estás perdiendo tiempo y dinero.</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-3xl font-black text-vortex-gold font-mono mb-3">02</div>
-                    <h4 class="text-lg font-bold text-white mb-2" data-es="Propuesta a medida" data-en="Custom proposal">Propuesta a medida</h4>
-                    <p class="text-gray-400 text-sm" data-es="Plan con tiempos, costos y resultados esperados — sin letra chica." data-en="Plan with timelines, costs and expected results — no fine print.">Plan con tiempos, costos y resultados esperados — sin letra chica.</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-3xl font-black text-vortex-gold font-mono mb-3">03</div>
-                    <h4 class="text-lg font-bold text-white mb-2" data-es="Implementación" data-en="Implementation">Implementación</h4>
-                    <p class="text-gray-400 text-sm" data-es="Construimos e integramos cada sistema con pruebas hasta que todo funcione perfecto." data-en="We build and integrate each system with testing until everything works perfectly.">Construimos e integramos cada sistema con pruebas hasta que todo funcione perfecto.</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="text-3xl font-black text-vortex-gold font-mono mb-3">04</div>
-                    <h4 class="text-lg font-bold text-white mb-2" data-es="Soporte continuo" data-en="Ongoing support">Soporte continuo</h4>
-                    <p class="text-gray-400 text-sm" data-es="Tu equipo recibe manuales y capacitación. Seguimos disponibles para mejoras continuas." data-en="Your team receives manuals and training. We remain available for continuous improvements.">Tu equipo recibe manuales y capacitación. Seguimos disponibles para mejoras continuas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nosotros -->
-    <section id="nosotros" class="py-24 bg-vortex-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-xs font-mono uppercase tracking-widest text-vortex-gold mb-2" data-es="Quiénes somos" data-en="About us">Quiénes somos</h2>
-                <h3 class="text-3xl sm:text-5xl font-black text-white" data-es="Automatización que genera resultados reales" data-en="Automation that generates real results">Automatización que genera resultados reales</h3>
-                <p class="text-gray-400 mt-2 max-w-3xl" data-es="Vortex AI Systems es una agencia especializada en automatización de procesos e inteligencia artificial para empresas. Operamos en Argentina, España y USA con un solo objetivo: que tu negocio funcione en piloto automático." data-en="Vortex AI Systems is an agency specialized in process automation and artificial intelligence for businesses. We operate in Argentina, Spain and USA with a single objective: to make your business run on autopilot.">Vortex AI Systems es una agencia especializada en automatización de procesos e inteligencia artificial para empresas. Operamos en Argentina, España y USA con un solo objetivo: que tu negocio funcione en piloto automático.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass-card p-6 rounded-3xl">
-                    <div class="h-48 rounded-2xl bg-gradient-to-tr from-blue-900 to-indigo-900 flex items-center justify-center font-mono text-vortex-gold text-lg mb-4 border border-amber-500/30">
-                        [SEDE: ARGENTINA]
-                    </div>
-                    <h4 class="text-xl font-bold text-white" data-es="Sede Central" data-en="Headquarters">Sede Central</h4>
-                    <p class="text-gray-400 text-sm mt-1" data-es="Base de operaciones principal" data-en="Main operations base">Base de operaciones principal</p>
-                </div>
-                <div class="glass-card p-6 rounded-3xl">
-                    <div class="h-48 rounded-2xl bg-gradient-to-tr from-cyan-900 to-blue-900 flex items-center justify-center font-mono text-vortex-gold text-lg mb-4 border border-cyan-500/30">
-                        [SALA DE OPERACIONES INTERNACIONAL]
-                    </div>
-                    <h4 class="text-xl font-bold text-white" data-es="Sala de Operaciones" data-en="Operations Room">Sala de Operaciones</h4>
-                    <p class="text-gray-400 text-sm mt-1">Argentina · España · USA</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto Directo -->
-    <section id="contacto" class="py-28 bg-gradient-to-t from-vortex-900 to-vortex-950 border-t border-gray-800 text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4" data-es="¿Listo para escalar tu empresa con IA?" data-en="Ready to scale your business with AI?">
-                ¿Listo para escalar tu empresa con IA?
-            </h2>
-            <p class="text-gray-400 text-lg mb-12" data-es="Pedí tu auditoría gratuita ahora. Sin compromisos, sin tecnicismos." data-en="Request your free audit now. No commitments, no technical jargon.">Pedí tu auditoría gratuita ahora. Sin compromisos, sin tecnicismos.</p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-                <a href="https://wa.me/5491122428253" target="_blank" class="px-8 py-4 rounded-xl bg-emerald-500 text-black font-extrabold text-base hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20" data-es="💬 Escribinos por WhatsApp (+54 9 11 2242-8253)" data-en="💬 Write us on WhatsApp (+54 9 11 2242-8253)">
-                    💬 Escribinos por WhatsApp (+54 9 11 2242-8253)
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-left font-mono text-xs text-gray-400">
-                <div class="glass-card p-4 rounded-xl">
-                    <span>WHATSAPP:</span><br>
-                    <strong class="text-white">+54 9 11 2242-8253</strong>
-                </div>
-                <div class="glass-card p-4 rounded-xl">
-                    <span>MESA DE AUDITORÍA (GMAIL):</span><br>
-                    <strong class="text-white">auditoria.vortexaisystems@gmail.com</strong>
-                </div>
-                <div class="glass-card p-4 rounded-xl">
-                    <span>DIRECCIÓN EJECUTIVA (GMAIL):</span><br>
-                    <strong class="text-white">director.vortexaisystems.com</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 bg-vortex-950 border-t border-gray-800 text-center text-xs text-gray-500 font-mono">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>© 2026 WWW.VORTEXAISYSTEMS.COM. All rights reserved. Argentina · España · USA.</div>
-            <div data-es="Sede: Argentina" data-en="Headquarters: Argentina">Sede: Argentina</div>
-        </div>
+    <footer style="text-align: center; padding: 30px; background-color: #07090c; color: #555; font-size: 0.85rem;">
+        &copy; 2026 VORTEX AI SYSTEMS. All rights reserved. Argentina · España · USA.
     </footer>
 
-    <script>
-        let currentLang = 'es';
-        function toggleLang() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            document.getElementById('lang-indicator').innerText = currentLang.toUpperCase();
-            
-            document.querySelectorAll('[data-es]').forEach(el => {
-                if (el.getAttribute('data-' + currentLang)) {
-                    el.innerText = el.getAttribute('data-' + currentLang);
-                }
-            });
-        }
-
-        function openModal(title, description, stack) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
-            document.getElementById('modalStack').innerText = stack;
-            document.getElementById('serviceModal').classList.remove('hidden');
-            document.getElementById('serviceModal').classList.add('flex');
-        }
-
-        function closeModal() {
-            document.getElementById('serviceModal').classList.add('hidden');
-            document.getElementById('serviceModal').classList.remove('flex');
-        }
-    </script>
-<!-- SECCIÓN CORPORATIVA NUEVA -->
-<section style="padding: 60px 20px; background-color: #0b0e14; text-align: center; border-top: 1px solid #333;">
-    <h2 style="color: #64ffda; font-size: 2.2rem; margin-bottom: 30px;">Nuestra Estructura Corporativa</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1100px; margin: 0 auto;">
-        
-        <div style="background: #112240; border-radius: 8px; overflow: hidden; width: 45%; min-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left;">
-            <img src="recepcion.jpg" alt="Recepción" style="width: 100%; display: block;">
-            <div style="padding: 20px;">
-                <h3 style="color: #64ffda; margin: 0 0 10px 0;">Oficinas Centrales</h3>
-                <p style="color: #8892b0; margin: 0;">Dirección Ejecutiva: Eduardo Miguel Mera</p>
-            </div>
-        </div>
-
-        <div style="background: #112240; border-radius: 8px; overflow: hidden; width: 45%; min-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left;">
-            <img src="oficina.jpg" alt="Sala de Reuniones" style="width: 100%; display: block;">
-            <div style="padding: 20px;">
-                <h3 style="color: #64ffda; margin: 0 0 10px 0;">Centro de Innovación</h3>
-                <p style="color: #8892b0; margin: 0;">Desarrollo tecnológico y estrategia global.</p>
-            </div>
-        </div>
-
-    </div>
-</section><!-- Título 3D -->
-<h1 style="font-size: 4rem; color: #fff; text-shadow: 2px 2px 0 #333, 4px 4px 0 #555, 6px 6px 0 #777; text-align: center; margin-top: 50px;">VORTEX AI SYSTEMS</h1>
-
-<!-- Sección de fotos corregida -->
-<section style="text-align: center; margin-top: 50px;">
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <img src="recepcion.jpg" alt="Recepción" style="width: 400px; border: 5px solid #fff;">
-        <img src="oficina.jpg" alt="Oficina" style="width: 400px; border: 5px solid #fff;">
-    </div>
-</section></body>
+</body>
 </html>
