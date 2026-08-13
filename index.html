@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex AI Systems</title>
+    <title>Vortex AI Systems | Singularidad Empresarial</title>
     <style>
         :root {
-            --bg-primary: #0b0e14;
-            --bg-secondary: #161b22;
-            --bg-card: #1a1d23;
-            --accent-gold: #f39c12;
-            --accent-cyan: #64ffda;
-            --text-main: #ffffff;
-            --text-muted: #8892b0;
-            --border-color: #30363d;
+            --bg-primary: #020617;
+            --bg-secondary: #0f172a;
+            --bg-card: #1e293b;
+            --accent-gold: #d4af37;
+            --accent-cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
         }
 
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
+            padding: 0; 
             background-color: var(--bg-primary); 
             color: var(--text-main); 
             line-height: 1.6;
         }
 
         header { 
-            background-color: var(--bg-card); 
+            background-color: var(--bg-secondary); 
             padding: 20px 40px; 
             display: flex; 
             justify-content: space-between; 
@@ -40,7 +41,7 @@
             font-weight: 800; 
             color: var(--accent-gold); 
             font-size: 1.3rem;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .header-info {
@@ -50,53 +51,84 @@
 
         .header-actions {
             display: flex;
-            gap: 10px;
+            gap: 12px;
+            align-items: center;
         }
 
-        /* Hero con Título 3D y Fondo con Degradado */
-        .hero { 
-            padding: 100px 20px; 
-            background: linear-gradient(180deg, #1a1d23 0%, #0b0e14 100%); 
+        /* Hero Singularidad Empresarial */
+        .vortex-hero { 
+            min-height: 90vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            background: radial-gradient(circle, #1e293b 0%, #020617 100%); 
             text-align: center; 
+            padding: 60px 20px;
+            border-bottom: 2px solid var(--accent-gold); 
         }
 
-        .title-3d { 
-            font-size: 4rem; 
+        .network-status {
+            font-size: 0.8rem; 
+            color: #64748b; 
+            letter-spacing: 3px; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .vortex-title { 
+            font-size: clamp(3rem, 8vw, 5.5rem); 
             font-weight: 900; 
             text-transform: uppercase; 
-            color: #ffffff;
-            text-shadow: 
-                2px 2px 0px #444444, 
-                4px 4px 0px #222222, 
-                6px 6px 0px #000000,
-                0 0 20px rgba(243, 156, 18, 0.2);
-            margin-bottom: 20px;
+            color: var(--accent-gold);
+            background: linear-gradient(to bottom, #fde047 0%, #d4af37 50%, #92400e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 15px 0; 
+            line-height: 1.1;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
             letter-spacing: 2px;
         }
 
-        .hero-subtitle {
-            color: var(--text-muted); 
-            font-size: 1.25rem; 
-            max-width: 700px;
-            margin: 0 auto;
+        .vortex-subtitle { 
+            font-size: clamp(1.2rem, 3vw, 1.8rem); 
+            color: var(--text-main);
+            letter-spacing: 4px; 
+            margin-bottom: 40px; 
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
-        /* Contenedor de Servicios / Tarjetas */
+        .hero-desc {
+            color: var(--text-muted); 
+            font-size: 1.15rem; 
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+        }
+
+        .vortex-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Contenedor de Servicios / Módulos Avanzados */
         .services-container { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
-            padding: 60px 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            padding: 80px 20px; 
             max-width: 1200px; 
             margin: 0 auto; 
         }
 
         .service-card { 
             background: var(--bg-secondary); 
-            padding: 30px; 
+            padding: 35px; 
             border-radius: 12px; 
             border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .service-card:hover {
@@ -106,52 +138,54 @@
 
         .service-title {
             color: var(--accent-gold);
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .service-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .btn-action { 
             background: var(--accent-gold); 
-            color: #000000; 
-            padding: 12px 24px; 
+            color: #020617; 
+            padding: 12px 28px; 
             border: none; 
-            font-weight: 700; 
+            font-weight: 800; 
             border-radius: 6px; 
             cursor: pointer; 
             text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            transition: opacity 0.2s;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
         }
 
         .btn-action:hover {
-            opacity: 0.9;
+            background: #fde047;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(30, 41, 59, 0.8);
             color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            font-size: 0.8rem;
+            border: 1px solid var(--accent-gold);
+            padding: 10px 20px;
         }
 
         .btn-secondary:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
+            background: var(--accent-gold);
+            color: #020617;
         }
 
         /* Sección Corporativa (Tus Fotos de Oficinas) */
         .corporate-section { 
-            padding: 80px 20px; 
-            background-color: #0e1218; 
+            padding: 100px 20px; 
+            background-color: var(--bg-secondary); 
             text-align: center; 
             border-top: 1px solid var(--border-color); 
         }
@@ -160,13 +194,14 @@
             color: var(--accent-cyan); 
             font-size: 2.5rem; 
             margin-bottom: 15px;
-            font-weight: 800;
+            font-weight: 850;
+            letter-spacing: 1px;
         }
 
         .corporate-subtitle {
             color: var(--text-muted);
             font-size: 1.1rem;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .image-grid { 
@@ -184,7 +219,7 @@
             overflow: hidden; 
             width: 45%; 
             min-width: 320px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6); 
             text-align: left; 
             border: 1px solid var(--border-color); 
             transition: transform 0.3s ease;
@@ -196,13 +231,13 @@
 
         .image-card img { 
             width: 100%; 
-            height: 260px;
+            height: 280px;
             object-fit: cover;
             display: block; 
         }
 
         .card-body { 
-            padding: 25px; 
+            padding: 30px; 
         }
 
         .card-title { 
@@ -218,7 +253,7 @@
             font-size: 1rem;
         }
 
-        /* Ventana Modal */
+        /* Ventana Modal Interactiva */
         .modal { 
             display: none; 
             position: fixed; 
@@ -226,22 +261,22 @@
             left: 0; 
             width: 100%; 
             height: 100%; 
-            background: rgba(0,0,0,0.85); 
+            background: rgba(2, 6, 23, 0.9); 
             justify-content: center; 
             align-items: center; 
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
 
         .modal-content { 
-            background: var(--bg-secondary); 
-            padding: 40px; 
+            background: var(--bg-card); 
+            padding: 45px; 
             border-radius: 12px; 
-            max-width: 500px; 
+            max-width: 550px; 
             width: 90%; 
-            border: 1px solid var(--border-color); 
+            border: 1px solid var(--accent-gold); 
             position: relative; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.9);
         }
 
         .close-btn { 
@@ -249,7 +284,7 @@
             top: 20px; 
             right: 25px; 
             cursor: pointer; 
-            font-size: 1.8rem; 
+            font-size: 2rem; 
             color: var(--text-muted); 
             transition: color 0.2s;
         }
@@ -261,9 +296,9 @@
         /* Footer */
         footer { 
             text-align: center; 
-            padding: 50px 20px; 
-            background-color: #07090c; 
-            color: #555555; 
+            padding: 60px 20px; 
+            background-color: var(--bg-primary); 
+            color: #64748b; 
             font-size: 0.9rem; 
             border-top: 1px solid var(--border-color);
         }
@@ -271,48 +306,55 @@
 </head>
 <body>
 
-    <!-- Header Original con Selector de Idioma y Contacto -->
+    <!-- Header Corporativo con Navegación y Traductor -->
     <header>
         <div class="logo-text">VORTEX AI SYSTEMS</div>
         <div class="header-info">Sede: Argentina | Global Operations</div>
         <div class="header-actions">
-            <button class="btn-action btn-secondary" onclick="toggleLang()">ES / EN</button>
-            <button class="btn-action" style="padding: 8px 16px; font-size: 0.8rem;" onclick="openModal('Contacto General', 'Escribinos a auditoria.vortexaisystems@gmail.com o vía WhatsApp al +54 9 11 2242-8253', 'Stack Oficial de Automatización')">Contactar</button>
+            <button class="btn-action btn-secondary" style="padding: 8px 16px; font-size: 0.8rem;" onclick="toggleLang()">ES / EN</button>
+            <button class="btn-action" style="padding: 8px 16px; font-size: 0.8rem;" onclick="openModal('Contacto General', 'Escribinos a auditoria.vortexaisystems@gmail.com o vía WhatsApp al +54 9 11 2242-8253', 'Stack Oficial de Automatización Corporativa')">Contactar</button>
         </div>
     </header>
 
     <main>
-        <!-- Hero con Título 3D y Fondo con Degradado -->
-        <div class="hero">
-            <h1 class="title-3d" data-es="VORTEX AI SYSTEMS" data-en="VORTEX AI SYSTEMS">VORTEX AI SYSTEMS</h1>
-            <p class="hero-subtitle" data-es="Construimos sistemas de IA que responden, venden, facturan y reportan solos." data-en="We build AI systems that answer, sell, invoice, and report autonomously.">Construimos sistemas de IA que responden, venden, facturan y reportan solos.</p>
+        <!-- Hero de Alto Impacto: Singularidad Empresarial -->
+        <div class="vortex-hero">
+            <div class="network-status">ESTADO DE RED: SÍNTESIS ACTIVA</div>
+            <h1 class="vortex-title" data-es="VORTEX AI SYSTEMS" data-en="VORTEX AI SYSTEMS">VORTEX<br>AI SYSTEMS</h1>
+            <div class="vortex-subtitle" data-es="SINGULARIDAD EMPRESARIAL" data-en="BUSINESS SINGULARITY">SINGULARIDAD EMPRESARIAL</div>
+            <p class="hero-desc" data-es="Construimos sistemas de IA de alta precisión que responden, venden, facturan y reportan de forma completamente autónoma." data-en="We build high-precision AI systems that answer, sell, invoice, and report completely autonomously.">Construimos sistemas de IA de alta precisión que responden, venden, facturan y reportan de forma completamente autónoma.</p>
+            
+            <div class="vortex-buttons">
+                <button class="btn-action" onclick="openModal('Sintetizar Empresa', 'Iniciando protocolo de análisis estructural y automatización integral de procesos.', 'Make.com + GPT-4 Core + Custom Webhooks')">Sintetizar Mi Empresa</button>
+                <button class="btn-action btn-secondary" onclick="openModal('Protocolo de Servicios', 'Acceso concedido al núcleo de operaciones y despliegue de agentes inteligentes.', 'Enterprise Architecture Stack')">Ingresar al Protocolo de Servicios</button>
+            </div>
         </div>
 
-        <!-- Sección de Servicios y Módulos -->
+        <!-- Sección de Servicios / Módulos de Automatización -->
         <div class="services-container">
             <div class="service-card">
                 <h3 class="service-title" data-es="01 // BOT WHATSAPP" data-en="01 // WHATSAPP BOT">01 // BOT WHATSAPP</h3>
-                <p class="service-desc" data-es="Responde, califica y agenda automáticamente 24/7 con integración GPT-4." data-en="Responds, qualifies and schedules automatically 24/7 with GPT-4 integration.">Responde, califica y agenda automáticamente 24/7 con integración GPT-4.</p>
-                <button class="btn-action btn-secondary" onclick="openModal('Bot WhatsApp 24/7', 'Automatización completa en WhatsApp API oficial para calificación de leads en tiempo récord.', 'Make.com + GPT-4 + WhatsApp API')">Ver más</button>
+                <p class="service-desc" data-es="Responde, califica y agenda automáticamente 24/7 con integración GPT-4 avanzada." data-en="Responds, qualifies and schedules automatically 24/7 with advanced GPT-4 integration.">Responde, califica y agenda automáticamente 24/7 con integración GPT-4 avanzada.</p>
+                <button class="btn-action btn-secondary" onclick="openModal('Bot WhatsApp 24/7', 'Automatización completa en WhatsApp API oficial para calificación masiva de leads en tiempo récord.', 'Make.com + GPT-4 + WhatsApp Business API')">Ver más</button>
             </div>
             
             <div class="service-card">
                 <h3 class="service-title" data-es="02 // CRM AUTOMATIZADO" data-en="02 // AUTOMATED CRM">02 // CRM AUTOMATIZADO</h3>
                 <p class="service-desc" data-es="Captura, clasifica y hace seguimiento de leads en tiempo real desde todos tus canales." data-en="Captures, classifies and tracks leads in real time from all your channels.">Captura, clasifica y hace seguimiento de leads en tiempo real desde todos tus canales.</p>
-                <button class="btn-action btn-secondary" onclick="openModal('CRM Automatizado', 'Sincronización en tiempo real entre formularios, campañas publicitarias y bases de datos centralizadas.', 'Google Sheets + Make + Webhooks')">Ver más</button>
+                <button class="btn-action btn-secondary" onclick="openModal('CRM Automatizado', 'Sincronización en tiempo real entre formularios, campañas publicitarias y bases de datos centralizadas.', 'Google Sheets + Make + Webhooks Pro')">Ver más</button>
             </div>
             
             <div class="service-card">
                 <h3 class="service-title" data-es="03 // PIPELINE DE VENTAS" data-en="03 // SALES PIPELINE">03 // PIPELINE DE VENTAS</h3>
                 <p class="service-desc" data-es="Control total desde el primer contacto hasta el cierre de contratos y facturación." data-en="Full control from first contact to contract closing and invoicing.">Control total desde el primer contacto hasta el cierre de contratos y facturación.</p>
-                <button class="btn-action btn-secondary" onclick="openModal('Pipeline de Ventas', 'Flujo completo automatizado para optimizar la conversión de clientes y maximizar el ROI corporativo.', 'Make.com + CRM + IA Core')">Ver más</button>
+                <button class="btn-action btn-secondary" onclick="openModal('Pipeline de Ventas', 'Flujo completo automatizado para optimizar la conversión de clientes y maximizar el ROI corporativo.', 'Make.com + CRM Core + IA de Conversión')">Ver más</button>
             </div>
         </div>
 
         <!-- SECCIÓN CORPORATIVA (Tus Fotos de Oficinas) -->
         <section class="corporate-section">
             <h2 class="corporate-main-title">Nuestra Estructura Corporativa</h2>
-            <p class="corporate-subtitle">Infraestructura tecnológica y centros de operaciones estratégicos.</p>
+            <p class="corporate-subtitle">Infraestructura tecnológica de vanguardia y centros de operaciones estratégicos.</p>
             <div class="image-grid">
                 <!-- Tarjeta Recepción -->
                 <div class="image-card">
@@ -334,22 +376,22 @@
         </section>
     </main>
 
-    <!-- Modal Dinámico para Servicios -->
+    <!-- Modal Dinámico para Servicios y Protocolos -->
     <div id="serviceModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle" style="color: var(--accent-gold); margin-top: 0; font-size: 1.5rem;"></h2>
-            <p id="modalDescription" style="color: var(--text-muted); line-height: 1.6;"></p>
-            <p style="margin-top: 25px; font-size: 0.9rem; color: var(--accent-cyan); border-top: 1px solid var(--border-color); padding-top: 15px;"><strong>Stack Tecnológico:</strong> <span id="modalStack"></span></p>
+            <h2 id="modalTitle" style="color: var(--accent-gold); margin-top: 0; font-size: 1.6rem;"></h2>
+            <p id="modalDescription" style="color: var(--text-muted); line-height: 1.7; font-size: 1.05rem;"></p>
+            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--accent-cyan); border-top: 1px solid var(--border-color); padding-top: 20px;"><strong>Stack Tecnológico:</strong> <span id="modalStack"></span></p>
         </div>
     </div>
 
-    <!-- Footer Original -->
+    <!-- Footer Corporativo -->
     <footer>
         &copy; 2026 VORTEX AI SYSTEMS. All rights reserved. Argentina · España · USA.
     </footer>
 
-    <!-- Scripts de Funcionalidad Originales -->
+    <!-- Scripts de Funcionalidad Total (Traductor e Interacción de Modales) -->
     <script>
         let currentLang = 'es';
         function toggleLang() {
