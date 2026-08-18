@@ -335,7 +335,7 @@
 
         function openModal(title, description, stack) {
             document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalDescription').innerHTML = description;
             document.getElementById('modalStack').innerText = stack;
             document.getElementById('serviceModal').style.display = 'flex';
         }
